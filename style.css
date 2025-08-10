@@ -335,6 +335,7 @@ header section .cards{
     display: flex;
     align-items: center;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 header section .cards::-webkit-scrollbar{
@@ -360,7 +361,7 @@ header section .cards .card .poster{
 }
 
 header section .cards .card:hover {
-    width: 300px;
+    min-width: 300px;
     overflow: hidden;
 }
 
@@ -373,7 +374,7 @@ header section .cards .card .rest_card{
     top: 0;
     z-index: 999999;
     opacity: 0;
-    transition: 1s, linear;
+    transition: 1s linear;
 }
 
 header section .cards .card .rest_card img{
@@ -436,6 +437,39 @@ header section .cards .card .rest_card .cont .sub h3 i{
     margin-right: 3px;
 }
 
-header section .cards .card .rest_card {
+header section .cards .card:hover .rest_card {
+    opacity: 1;
+}
+
+header section .bi-chevron-right,
+.bi-chevron-left {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    width: 25px;
+    height: 25px;
+    background: rgb(255, 255, 255, .3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s linear;
+    z-index: 999999999;
+    opacity: 0;
+}
+
+header section .bi-chevron-right{
+    left: unset;
+    right: 3%;
+}
+
+header section:hover .bi-chevron-right{
+    opacity: 1;
+}
+
+header section:hover .bi-chevron-left{
     opacity: 1;
 }
