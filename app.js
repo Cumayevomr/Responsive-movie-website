@@ -9,3 +9,28 @@ left_btn.addEventListener('click', () => {
     cards.scrollLeft += 140;
 })
 
+let json_url = 'movie.json';
+
+fetch(json_url).then(Response => Response.json())
+    .then((data) => {
+        data.forEach((ele, i) => {
+            let {name, imdb, date, sposter, bposter, genre, url} = ele;
+            let card = document.createElement('a');
+            card.classList.add('add');
+            card.href = url;
+            card.innerHTML = `
+            <img src="${sposter}" alt="${name}" class="poster">
+                <div class="rest_card">
+                    <img src="${bposter}" alt="">
+                        <div class="cont">
+                            <h4>${name}</h4>
+                        <div class="sub">
+                            <p>Action, 2022</p>
+                            <h3><span>IMDB</span><i class="bi bi-star-fill"></i>${imdb}</h3>
+                        </div>
+                    </div>
+                </div>
+            `
+            
+        });
+    });
