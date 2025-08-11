@@ -93,7 +93,7 @@
             });
 
         document.getElementById('title').innerText = movie_array[0].name;
-        document.getElementsByTagName('video')[0].src = movie_array[0].trailer;
+        document.getElementsByTagName('video')[0].setAttribute('src', movie_array[0].trailer);
         document.getElementsByTagName('video')[0].play();
         document.getElementById('low_q').href = movie_array[0].low;
         document.getElementById('medium_q').href = movie_array[0].medium;
