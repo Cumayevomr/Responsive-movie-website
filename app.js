@@ -51,7 +51,7 @@ fetch(json_url).then(Response => Response.json())
             <img src="${sposter}" alt="">
             <div class="cont">
                 <h3>${name} </h3>
-                p>${genre}, ${date}, <span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</p>
+                <p>${genre}, ${date}, <span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</p>
             </div>
             `
             search.appendChild(card);
@@ -74,7 +74,7 @@ fetch(json_url).then(Response => Response.json())
                 } else {
                     a[index].style.display = "none";
                 }
-                if (search_input.value == 0) {
+                if (search_input.value.length === 0) {
                     search.style.visibility = "hidden";
                     search.style.opacity = 0;
                 }
@@ -126,7 +126,7 @@ fetch(json_url).then(Response => Response.json())
 
         })
         movies.addEventListener('click', () => {
-            card.innerHTML = '';
+            cards.innerHTML = '';
 
             let movie_array = data.filter(ele => {
                 return ele.type === "movie";

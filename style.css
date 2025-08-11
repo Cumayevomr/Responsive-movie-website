@@ -441,8 +441,8 @@ header section .cards .card:hover .rest_card {
     opacity: 1;
 }
 
-header section .bi-chevron-right,
-.bi-chevron-left {
+header section .bi-chevron-left,
+.bi-chevron-right {
     position: absolute;
     top: 50%;
     left: 3%;
